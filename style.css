@@ -1,0 +1,152 @@
+:root{
+    --darkest:#222831;
+    --dark:#393E46;
+    --blue:#00ADB5;
+    --light:#EEEEEE;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--darkest);
+    color: white;
+}
+
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1{
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#task-form{
+    display: flex;
+}
+
+input, button{
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+#task-pr{
+    background-color: var(--dark);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-right: 1rem;
+    font-size: 1.23rem;
+    color: white;
+}
+
+#task-input{
+    flex: 1 1 0%;
+    margin-right: 1rem;
+    background-color: var(--dark);
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 1.23rem;
+    color: white;
+}
+
+#task-submit-button{
+    color: var(--blue);
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#task-submit-button:hover{
+    opacity: 0.8;
+}
+
+#task-submit-button:active{
+    opacity: 0.4;
+}
+
+main{
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+.task-list h2{
+    margin-bottom: 2rem;
+
+}
+.task-list{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+#tasks .task .content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+    ;
+}
+
+#tasks .task{
+    display: flex;
+    flex:1 1 0%;
+    justify-content: space-between;
+    background-color: var(--dark);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+#tasks .task .content .text,#tasks .task .content .number{
+    color: white;
+    font-size: 1.25rem;
+    display: block;
+}
+
+#tasks .task .content .text:not(:read-only),#tasks .task .content .number:not(:read-only){
+    color: var(--blue);
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions button{
+    cursor: pointer;
+    color: var(--blue);
+    font-size: 1.23rem;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.actions button:hover{
+    opacity: 0.8;
+}
+
+.actions .delete{
+    color:#B70404;
+}
+
+
