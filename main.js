@@ -4,12 +4,26 @@ window.addEventListener('load', () => {
 	const input = document.querySelector("#task-input");
     const pr = document.querySelector("#task-pr");
 	const list_el = document.querySelector("#tasks");
+    let taskNameArray=[];
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
 
 		const task = input.value;
         const priority = pr.value; 
+
+        if(task==''||priority==''){
+            alert('Task Name and priority canot be empty');
+            return;
+        }else if(taskNameArray.includes(task)){
+                alert('Please Enter A unique Task Name');
+                return;
+        } 
+        else{
+            taskNameArray.push(task);
+        }
+
+        
 
 		const task_el = document.createElement('div');
 		task_el.classList.add('task');
@@ -57,6 +71,7 @@ window.addEventListener('load', () => {
         pr.value='';
 
 		task_edit_el.addEventListener('click', (e) => {
+            const taskName = document.getElementsByClassName('text');
 			if (task_edit_el.innerText.toLowerCase() == "edit") {
 				task_edit_el.innerText = "Save";
 				task_input_el.removeAttribute("readonly");
@@ -73,5 +88,6 @@ window.addEventListener('load', () => {
 		task_delete_el.addEventListener('click', (e) => {
 			list_el.removeChild(task_el);
 		});
+
 	});
 });
